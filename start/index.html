@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build Your Own System · Still Employed</title>
+  <meta name="description" content="The free starter system from Still Employed: how to start, what happens next, and which AI tools it was tested in.">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/">Still Employed</a>
+      <nav aria-label="Main">
+        <a href="/start/" aria-current="page">Starter system</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <h1>Build Your Own System</h1>
+
+      <p>It’s a small set of plain text files, free on GitHub. A Guide interviews you first, one question at a time, and then builds the system with you, around your job, your home, or a small business. You tell it what you want. It works out the how.</p>
+
+      <p>The files are the tool. The rest of the book is the way of thinking behind them.</p>
+
+      <p><a class="button secondary" href="https://github.com/Noff-Labs/still-employed-starter">Open the starter system on GitHub</a></p>
+
+      <h2>A word about safety</h2>
+
+      <p>This system can be powerful, because it lets AI agents do real work for you. That also means you do less of it yourself, so what you let them do really matters. Setting clear limits (your walls) is one of the most important parts of the system. It comes with some safety features built in, like the privacy guard. They’re set up to help, but no one can promise they’ll always work: AI tools differ from one another, and they change over time. So it’s a good idea to ask your AI to explain how the safety features work, to check that they work on your computer, and to add your own limits where you need them. Be careful what you share, and what you ask the AI to do.</p>
+
+      <h2>How to start</h2>
+
+      <p><strong>What you need.</strong> You need an AI tool that can read and write files on your computer, such as Claude Code or Codex. A chat window in a web browser can’t do this.</p>
+
+      <p><strong>Paste this one sentence into your AI tool:</strong></p>
+
+      <pre><code id="sentence">Download the starter system from github.com/Noff-Labs/still-employed-starter into a new folder on my computer, then open it and start its Guide.</code></pre>
+      <p><button class="button copy" type="button" id="copy">Copy the sentence</button><span class="copied" id="copied" role="status" aria-live="polite"></span></p>
+
+      <p><strong>If you’d rather do it yourself:</strong> click the green <strong>Code</strong> button on <a href="https://github.com/Noff-Labs/still-employed-starter">GitHub</a>, then <strong>Download ZIP</strong>; unzip it; open the folder in your AI tool; type <strong>start</strong>.</p>
+
+      <h2>What happens next</h2>
+
+      <ol>
+        <li>If your AI downloaded the files for you, it will ask you to open a new session inside the new folder. Do that, then type <strong>start</strong>. This turns on the privacy guard.</li>
+        <li>The Guide asks what this is for, then asks a few questions, one at a time. It asks <strong>what</strong> you want done, not <strong>how</strong> to do it.</li>
+        <li>It builds the system with you. You choose a name for your one contact, and the Guide writes your rules, fills in memory, and turns on the privacy guard.</li>
+        <li>You start with <strong>one</strong> first workflow. You add more later, when real work shows that something is missing.</li>
+      </ol>
+
+      <p>From then on, it’s one habit. Whenever you open the folder, type <strong>start</strong>. Your contact tells you where things stand and the one next step. Then tell it what you want, in your own words. When you’re finished, say <strong>done for today</strong>. Your contact saves what you did and tells you the next step.</p>
+
+      <p>If anything is unclear, now or later, just ask. Your AI can explain any step, including how the safety features work.</p>
+
+      <h2>Which AI tool?</h2>
+
+      <p>David uses it mainly in Claude Code, in the Claude desktop app. In October 2026, the setup was tested there and in Codex. It may work in other AI tools that can read and write files, but it hasn’t been tested there. AI tools change often, so if something doesn’t work as described, ask your AI to check.</p>
+
+      <h2>Use at your own risk</h2>
+
+      <p>The starter system is free and shared as is, with no warranty, under the MIT License. You decide what you share with your AI tool and what you ask it to do, and you’re responsible for the results. Nothing in it, or in the book, is legal, financial, tax, or other professional advice.</p>
+
+      <p>The <a href="https://github.com/Noff-Labs/still-employed-starter#readme">README on GitHub</a> has the full details, including how each layer of the privacy guard works.</p>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">© 2026 David Noff · <a href="/contact/">Contact</a></div>
+  </footer>
+
+  <script>
+    document.getElementById("copy").addEventListener("click", function () {
+      var text = document.getElementById("sentence").textContent;
+      var done = function () { document.getElementById("copied").textContent = "Copied"; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {
+          document.getElementById("copied").textContent = "Select the sentence and copy it";
+        });
+      } else {
+        document.getElementById("copied").textContent = "Select the sentence and copy it";
+      }
+    });
+  </script>
+</body>
+</html>
