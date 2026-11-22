@@ -26,6 +26,11 @@ body {
   font-family: "Inter Tight", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 1.125rem;
   line-height: 1.6;
+  /* Footer stays at the bottom of the window on tall screens */
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 a { color: var(--green); text-underline-offset: 0.15em; }
@@ -53,7 +58,7 @@ header.site nav { display: flex; gap: 1.25rem; font-size: 1rem; }
 
 .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
 
-main { padding: 2.5rem 0 3rem; }
+main { padding: 2.5rem 0 3rem; flex: 1 0 auto; }
 
 h1, h2, h3 { color: var(--green); line-height: 1.2; }
 h1 { font-size: 2.4rem; margin: 0 0 0.4rem; letter-spacing: -0.01em; }
